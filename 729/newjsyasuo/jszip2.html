@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jszip2</title>
+	<!-- <script src="jszip.js"></script> -->
+	<!-- <script src="FileSaver.js"></script> -->
+	<script src="jsutil.js"></script>
+	<script src="pako.min.js"></script>
+	<script>
+
+//通过路径获取文件数据（data)
+JSZipUtils.getBinaryContent('3.mdlh', function(err, data) {
+    if(err) {
+        throw err; 
+    }
+   
+//将获取到的Arraybuffer数据用Uint8来读取。
+var arrdata=new Uint8Array(data)
+//将第二个script压缩块截取出来。
+var scr=arrdata.slice(82328,(82328+523))
+//用pako解压此压缩块
+    var result = pako.inflate(scr, { to: 'string' });
+ // console.log(result);
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ //创建文件，引用jszip才行。
+// var z=new JSZip();
+// z.file("2.srcipt",data,{binary:true});
+// z.generateAsync({type:"blob"}).then(function(blob){
+// 			saveAs(blob,"t.zip")
+// 		})
+
+
+});
+
+		
+	</script>
+</head>
+<body>
+	<!-- <input type="button" value="press here" onclick="pack()"> -->
+</body>
+</html>

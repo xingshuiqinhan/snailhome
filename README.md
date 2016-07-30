@@ -1,2 +1,0 @@
-# snailhome
-myworkspace
